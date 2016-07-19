@@ -1,0 +1,13 @@
+.panel {
+    border: 1px solid cadetblue;
+    margin: 10px;
+}
+
+.panel > div {
+    padding: 8px;
+}
+
+.panel-header {
+    background-color: cadetblue;
+    color: #FFF;
+}

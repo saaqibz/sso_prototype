@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Demo OAuthApp</title>
+    <style>
+        .viewer-box {
+            width: 500px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+        }
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="viewer.css">
+</head>
+<body ng-app="ViewerApp" ng-controller="ViewerCtrl as ctrl">
+<div class="viewer-box" ng-if="!ctrl.user">
+    <h1> You're not logged in</h1>
+    <div>Please go to the <a href="../index.html">login page</a>.</div>
+</div>
+</body>
+
+<div class="viewer-box" ng-if="ctrl.user">
+    <h1>Howdy, {{ctrl.user.name}}:</h1>
+    <h3> Here's the deets on your llamas</h3>
+    <div><a href="../market-app/index.html">Buy llamas</a></div>
+
+    <div class="panel" ng-repeat="llama in ctrl.llamas">
+        <div class="panel-header">{{::llama.name}}</div>
+        <div class="panel-body">
+            <div class="row">
+                <span class="left">Owner:</span>
+                <span class="right">{{::llama.owner}}</span>
+            </div>
+            <div class="row">
+                <span class="left">Hunger:</span>
+                <span class="right">{{::llama.hunger}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-cookies.min.js"></script>
+<script src="viewer.js"></script>
+
+
+</html>

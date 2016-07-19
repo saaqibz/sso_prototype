@@ -1,0 +1,20 @@
+.viewer-box {
+    width: 500px;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+.panel {
+    border: 1px solid cadetblue;
+    margin: 10px;
+}
+
+.panel > div {
+    padding: 8px;
+}
+
+.panel-header {
+    background-color: cadetblue;
+    color: #FFF;
+}

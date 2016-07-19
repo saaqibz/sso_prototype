@@ -1,0 +1,44 @@
+<html>
+<head>
+    <title>Demo OAuthApp</title>
+    <style>
+
+    </style>
+
+    <link rel="stylesheet" type="text/css" href="market.css">
+</head>
+<body ng-app="MarketApp" ng-controller="MarketCtrl as ctrl">
+<div class="market-box" ng-if="!ctrl.user">
+    <h1> You're not logged in</h1>
+    <div>Please go to the <a href="../index.html">login page</a>.</div>
+</div>
+</body>
+
+<div class="market-box" ng-if="ctrl.user">
+    <h1>Well hello there, {{ctrl.user.name}}:</h1>
+    <h3>Can I interest you in a nice llama?</h3>
+    <div><a href="../viewer-app/index.html">Check on your llamas</a></div>
+
+    <div class="panel">
+        <div class="panel-header">{{ctrl.user.name}}</div>
+        <div class="panel-body">
+            <div class="row">
+                <span class="left">Cash:</span>
+                <span class="right">{{ctrl.user.cash}}</span>
+            </div>
+            <div>
+                <span class="left">Llamas:</span>
+                <span class="right">{{ctrl.llamaCount}}</span>
+                <hr>
+                <button ng-click="ctrl.buy()">Buy $100</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-cookies.min.js"></script>
+<script src="market.js"></script>
+
+
+</html>
